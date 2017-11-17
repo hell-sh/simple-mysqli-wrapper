@@ -9,6 +9,7 @@ class DBAPI
 		if(!$this->connected)
 		{
 			$this->db = new mysqli("hostname", "username", "password", "database"); // CHANGE LOGIN DATA HERE
+			// $this->db = new mysqli("localhost", "root", "", "database"); // OR UNCOMMENT THIS
 			$this->connected = true;
 		}
 		$arg = func_get_args();
@@ -68,7 +69,8 @@ class DBAPI
 						{
 							array_push($res, $r);
 						}
-					} else
+					}
+					else
 					{
 						return $query;
 					}
@@ -93,4 +95,3 @@ class DBAPI
 	}
 }
 $db = new DBAPI();
-?>
