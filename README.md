@@ -11,6 +11,6 @@ If your server still uses PHP 5 you might need to install the MySQL Native Drive
 
 ## Bulletproof
 
-- This API is being used to make over a million SQL requests every day.
+- This API is being used to make over a million SQL requests every day in our own projects alone.
 - This API has been tested by tools and experts and neither manged to perform an unwanted SQL command.
 - This API uses the MySQL Native Driver for high performance.
