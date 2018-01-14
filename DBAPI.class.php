@@ -32,7 +32,7 @@ class DBAPI
 						}
 						$i++;
 					}
-					call_user_func_array(array($stmt,'bind_param'),$bind_names);
+					call_user_func_array(array($stmt, 'bind_param'),$bind_names);
 					$stmt->execute();
 					$res = $stmt->get_result();
 					if($res instanceof mysqli_result)
@@ -78,12 +78,12 @@ class DBAPI
 			}
 			else
 			{
-				throw new Exception("DBAPI::query can't have only 2 Arguments.");
+				throw new Exception("DBAPI::query can't have only 2 arguments.");
 			}
 		}
 		else
 		{
-			throw new Exception("DBAPI::query needs at least 1 Argument.");
+			throw new Exception("DBAPI::query needs at least 1 argument.");
 		}
 		return $res;
 	}
