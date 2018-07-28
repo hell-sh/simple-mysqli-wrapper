@@ -2,8 +2,8 @@
 
 A [bulletproof](#bulletproof) PHP database API.
 
-- [Download](https://raw.githubusercontent.com/timmyrs/PHP-DBAPI/master/DBAPI.class.php)
-- [Example](https://github.com/timmyrs/PHP-DBAPI/blob/master/Example.php)
+- [Download](https://raw.githubusercontent.com/hel-sh/PHP-DBAPI/master/DBAPI.class.php)
+- [Example](https://github.com/hell-sh/PHP-DBAPI/blob/master/Example.php)
 
 ## Notice for PHP 5 Users
 
