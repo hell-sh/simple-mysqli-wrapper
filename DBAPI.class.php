@@ -1,15 +1,26 @@
 <?php
 class DBAPI
 {
+	private $hostname;
+	private $username;
+	private $password;
+	private $database;
 	private $connected = false;
-	private $db = null;
+	private $con = null;
+
+	function __construct($hostname, $username, $password, $database)
+	{
+		$this->hostname = $hostname;
+		$this->username = $username;
+		$this->password = $password;
+		$this->database = $database;
+	}
 
 	function query()
 	{
 		if(!$this->connected)
 		{
-			$this->db = new mysqli("hostname", "username", "password", "database"); // CHANGE LOGIN DATA HERE
-			// $this->db = new mysqli("localhost", "root", "", "database"); // OR UNCOMMENT THIS
+			$this->con = new mysqli($this->hostname, $this->username, $this->password, $this->database);
 			$this->connected = true;
 		}
 		$arg = func_get_args();
@@ -18,7 +29,7 @@ class DBAPI
 		{
 			if(count($arg) > 2)
 			{
-				if($stmt = $this->db->prepare($arg[0]))
+				if($stmt = $this->con->prepare($arg[0]))
 				{
 					$i = 0;
 					$bind_names[] = $arg[1];
@@ -26,13 +37,13 @@ class DBAPI
 					{
 						if($i > 1)
 						{
-							$bind_name = 'bind'.$a;
+							$bind_name = "bind".$a;
 							$$bind_name = $a;
 							$bind_names[] = &$$bind_name;
 						}
 						$i++;
 					}
-					call_user_func_array(array($stmt, 'bind_param'),$bind_names);
+					call_user_func_array(array($stmt, "bind_param"),$bind_names);
 					$stmt->execute();
 					$res = $stmt->get_result();
 					if($res instanceof mysqli_result)
@@ -60,7 +71,7 @@ class DBAPI
 			}
 			else if(count($arg) < 2)
 			{
-				if($query = $this->db->query($arg[0]))
+				if($query = $this->con->query($arg[0]))
 				{
 					if($query instanceof mysqli_result)
 					{
@@ -90,8 +101,7 @@ class DBAPI
 
 	function close()
 	{
-		$this->db->close();
+		$this->con->close();
 		$this->connected = false;
 	}
 }
-$db = new DBAPI();

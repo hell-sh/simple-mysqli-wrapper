@@ -1,5 +1,6 @@
 <?php
 require "DBAPI.class.php";
+$db = new DBAPI("localhost", "root", "password", "database");
 
 $res = $db->query("SELECT * FROM `table` WHERE 1");
 foreach($res as $row)
