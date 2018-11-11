@@ -9,7 +9,7 @@ A bulletproof] PHP database API.
 
 If your server still uses PHP 5 you might need to install the MySQL Native Driver: `apt-get install php5-mysqlnd`
 
-## Why it's bulletproof:
+## Why it's Bulletproof
 
 - This API is being used to make over a million SQL requests every day in our own projects alone.
 - This API has been tested by tools and experts and neither manged to perform an unwanted SQL command.
