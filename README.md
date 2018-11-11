@@ -1,16 +1,10 @@
-# DBAPI.class.php
+# PHP-DBAPI
 
-A bulletproof] PHP database API.
+A bulletproof PHP MySQL API.
 
-- [Download](https://raw.githubusercontent.com/hell-sh/PHP-DBAPI/master/DBAPI.class.php)
-- [Example](https://github.com/hell-sh/PHP-DBAPI/blob/master/Example.php)
+## Features
 
-## Notice for PHP 5 Users
-
-If your server still uses PHP 5 you might need to install the MySQL Native Driver: `apt-get install php5-mysqlnd`
-
-## Why it's Bulletproof
-
-- This API is being used to make over a million SQL requests every day in our own projects alone.
-- This API has been tested by tools and experts and neither manged to perform an unwanted SQL command.
-- This API uses the MySQL Native Driver for high performance.
+- Used to make millions of SQL requests every day
+- Neither tools nor experts managed to perform unwanted SQL commands with PHP-DBAPI in the backend
+- Leverages the MySQL Native Driver for high performance
+  - Speaking of which, if you're still using PHP 5 — which you shouldn't — you need to install it first: `apt-get install php5-mysqlnd`
