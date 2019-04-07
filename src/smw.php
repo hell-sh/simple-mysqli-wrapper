@@ -1,5 +1,6 @@
 <?php
-class DBAPI
+namespace hellsh;
+class smw
 {
 	private $hostname;
 	private $username;
@@ -20,7 +21,7 @@ class DBAPI
 	{
 		if(!$this->connected)
 		{
-			$this->con = new mysqli($this->hostname, $this->username, $this->password, $this->database);
+			$this->con = new \mysqli($this->hostname, $this->username, $this->password, $this->database);
 			$this->connected = true;
 		}
 		$arg = func_get_args();
@@ -46,7 +47,7 @@ class DBAPI
 					call_user_func_array(array($stmt, "bind_param"),$bind_names);
 					$stmt->execute();
 					$res = $stmt->get_result();
-					if($res instanceof mysqli_result)
+					if($res instanceof \mysqli_result)
 					{
 						$fiels = json_decode(json_encode($res->fetch_fields()), true);
 						$res = $res->fetch_all();
@@ -73,7 +74,7 @@ class DBAPI
 			{
 				if($query = $this->con->query($arg[0]))
 				{
-					if($query instanceof mysqli_result)
+					if($query instanceof \mysqli_result)
 					{
 						$res = array();
 						while($r = $query->fetch_assoc())
@@ -89,12 +90,12 @@ class DBAPI
 			}
 			else
 			{
-				throw new Exception("DBAPI::query can't have only 2 arguments.");
+				throw new \Exception("hellsh\smw::query can't have only 2 arguments.");
 			}
 		}
 		else
 		{
-			throw new Exception("DBAPI::query needs at least 1 argument.");
+			throw new \Exception("hellsh\smw::query needs at least 1 argument.");
 		}
 		return $res;
 	}

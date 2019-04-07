@@ -1,10 +1,11 @@
-# PHP-DBAPI
+# smw, the simple & secure mysqli wrapper
 
-A bulletproof PHP MySQL API.
+A simple and secure wrapper for interacting with MySQL servers.
 
-## Features
+We've been using smw in our backend for years and neither tools nor experts managed to perform unwanted SQL commands.
 
-- Used to make millions of SQL requests every day
-- Neither tools nor experts managed to perform unwanted SQL commands with PHP-DBAPI in the backend
-- Leverages the MySQL Native Driver for high performance
-  - Speaking of which, if you're still using PHP 5 — which you shouldn't — you need to install it first: `apt-get install php5-mysqlnd`
+## Usage
+
+If you're using [Composer](https://getcomposer.org), you can simply `composer require hellsh/smw:dev-master`
+
+Further information can be found [here](https://github.com/hell-sh/smw/blob/master/example.php).

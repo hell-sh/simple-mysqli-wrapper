@@ -1,0 +1,14 @@
+{
+	"name": "hellsh/smw",
+	"description": "A simple and secure wrapper for interacting with MySQL servers.",
+	"keywords": ["sql", "mysql"],
+	"homepage": "https://github.com/hell-sh/smw",
+	"type": "library",
+	"license": "MIT",
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"require": {
+		"ext-mysqli": "*"
+	}
+}
