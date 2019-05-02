@@ -1,5 +1,5 @@
 {
-	"name": "hellsh/smw",
+	"name": "hell-sh/smw",
 	"description": "A simple and secure wrapper for interacting with MySQL servers.",
 	"keywords": ["sql", "mysql"],
 	"homepage": "https://github.com/hell-sh/smw",
