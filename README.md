@@ -6,6 +6,6 @@ We've been using smw in our backend for years and neither tools nor experts mana
 
 ## Usage
 
-If you're using [Composer](https://getcomposer.org), you can simply `composer require hell-sh/smw ^1.0`
+If you're using [Composer](https://getcomposer.org), you can simply `composer require hell-sh/smw`
 
 Further information can be found [here](https://github.com/hell-sh/smw/blob/master/example.php).
