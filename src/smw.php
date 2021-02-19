@@ -30,21 +30,9 @@ class smw
 		{
 			if(count($arg) > 2)
 			{
-				if($stmt = $this->con->prepare($arg[0]))
+				if($stmt = $this->con->prepare(array_shift($arg)))
 				{
-					$i = 0;
-					$bind_names[] = $arg[1];
-					foreach($arg as $i => $a)
-					{
-						if($i > 1)
-						{
-							$bind_name = "bind".$a;
-							$$bind_name = $a;
-							$bind_names[] = &$$bind_name;
-						}
-						$i++;
-					}
-					call_user_func_array(array($stmt, "bind_param"),$bind_names);
+					(new \ReflectionClass("mysqli_stmt"))->getMethod("bind_param")->invokeArgs($stmt, $arg);
 					$stmt->execute();
 					$res = $stmt->get_result();
 					if($res instanceof \mysqli_result)
