@@ -66,6 +66,10 @@ class smw
 					}
 					else
 					{
+						if($res === false && $stmt->errno != 0)
+						{
+							trigger_error("mysqli error {$stmt->error} ({$stmt->errno})");
+						}
 						return $res;
 					}
 				}
